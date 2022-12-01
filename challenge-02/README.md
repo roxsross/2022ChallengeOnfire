@@ -30,7 +30,7 @@ Forkea este repositorio y envía una solicitud PR "Pull Request" con la Solució
 > Busca los logros donde no hay límites by @roxsross
 
 ## Bibliografía recomendada
-https://docs.docker.com/engine/reference/builder/
-https://docs.docker.com/compose/compose-file/
-https://12factor.net/
-https://conventionalcommits.org/
+- https://docs.docker.com/engine/reference/builder/
+- https://docs.docker.com/compose/compose-file/
+- https://12factor.net/
+- https://conventionalcommits.org/
