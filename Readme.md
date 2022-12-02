@@ -3,7 +3,7 @@
 [![Discord](https://img.shields.io/discord/729672926432985098?style=social&label=Discord&logo=discord)](https://discord.gg/5fqHuBq6pf)
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCxPD7bsocoAMq8Dj18kmGyQ?style=social)](https://www.youtube.com/channel/UCa-FcaB75ZtqWd1YCWW6INQ?sub_confirmation=1)
 
-# DevOps Challenge 2022 | k8sonfire 🔥 🔥 
+# DevOps Challenge 2022 | Onfire 🔥 🔥 
 ## by @roxsross
 
 ### Concepto – ¿Pero qué es DevOps? 
