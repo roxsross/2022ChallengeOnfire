@@ -3,7 +3,7 @@
 [![Discord](https://img.shields.io/discord/729672926432985098?style=social&label=Discord&logo=discord)](https://discord.gg/5fqHuBq6pf)
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCxPD7bsocoAMq8Dj18kmGyQ?style=social)](https://www.youtube.com/channel/UCa-FcaB75ZtqWd1YCWW6INQ?sub_confirmation=1)
 
-# DevOps Challenge 2022 | k8sonfire 🔥 🔥 
+# DevOps Challenge 2022 | Onfire 🔥 🔥 
 ## by @roxsross
 
 ### Concepto – ¿Pero qué es DevOps? 
@@ -19,12 +19,15 @@ En su significado más amplio, DevOps es una cultura. Lo que se quiere conseguir
 
   1. POKEMON DEVOPS CHALLENGE
   * [BACK-FRONT](challenge-01/README.md)
+  * by [sebas1017](https://github.com/sebas1017)
 
   1. MULTIAPLICACIONES CON FALLAS
   * [BACK-FRONT-REDIS](challenge-02/README.md)
+  * by [roxsross](https://github.com/roxsross)
 
   1. KUBERNETES CHALLENGE BY KODEKLOUD
   * [KODEKLOUD](challenge-03/README.md)
+  * by kodekloud
 
 
 ### Busca los logros donde no hay límites by @roxsross
