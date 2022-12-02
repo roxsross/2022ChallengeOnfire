@@ -40,6 +40,7 @@ Para desplegar la arquitectura se debe ejecutar el siguiente comando:
 ```bash
 cd terraform
 terraform init
+terraform workspace new prod
 terraform apply
 ```
 
