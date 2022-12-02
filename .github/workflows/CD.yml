@@ -1,7 +1,5 @@
 name: Continuous deployment
 
-description: Decrypt environment variables and push to Docker Hub
-
 on:
   push:
     branches:
