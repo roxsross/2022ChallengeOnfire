@@ -1,18 +1,11 @@
 version: "3.7"
-services:
 
+services:
   backend:
     build: ./backend
     ports:
       - "8000:8000"
-    volumes:
-      - ./backend:/app
-    environment:
-      - FLASK_APP=app.py
-      - FLASK_ENV=DEVELOPMENT
     container_name: backend_pokemon
-    networks:
-        - default
 
   frontend :
     build: ./frontend
@@ -21,9 +14,5 @@ services:
     container_name: frontend_pokemon
     depends_on:
       - backend
-    networks:
-      - default
-
-networks:
-    default:
-      driver: bridge
+    links:
+      - backend

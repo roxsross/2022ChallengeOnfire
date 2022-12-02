@@ -16,14 +16,14 @@ class App extends Component {
     this.handleMoreClick = this.handleMoreClick.bind(this);
   }
 
-  
+
 
   handleMoreClick(event) {
-      console.log("Offset: " + this.state.pokemon)
-    };
-    
-  
-  
+    console.log("Offset: " + this.state.pokemon)
+  };
+
+
+
   componentDidMount() {
     this.getMorePokemon();
   }
@@ -32,13 +32,13 @@ class App extends Component {
     let url_deploy_config = process.env.REACT_APP_URL_DEVELOPMENT;
     let url = url_deploy_config + "/api/v1/all_pokemons";
     fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      if (data) {
-        this.setState({pokemonDetails: data.results})
-      }
-    })
-    .catch(console.log)
+        .then(response => response.json())
+        .then(data => {
+          if (data) {
+            this.setState({pokemonDetails: data.results})
+          }
+        })
+        .catch(console.log)
   }
 
   render() {
@@ -48,16 +48,16 @@ class App extends Component {
     });
 
     return (
-      <div>
-        <Header />
-        <div className="container">
-          <div className="card-columns">
-         
-            {renderedPokemonList}
+        <div>
+          <Header />
+          <div className="container">
+            <div className="card-columns">
+
+              {renderedPokemonList}
+            </div>
           </div>
+
         </div>
-      
-      </div>
     );
   }
 }
