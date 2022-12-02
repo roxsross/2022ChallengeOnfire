@@ -19,12 +19,15 @@ En su significado más amplio, DevOps es una cultura. Lo que se quiere conseguir
 
   1. POKEMON DEVOPS CHALLENGE
   * [BACK-FRONT](challenge-01/README.md)
+  * by (sebas1017)[https://github.com/sebas1017]
 
   1. MULTIAPLICACIONES CON FALLAS
   * [BACK-FRONT-REDIS](challenge-02/README.md)
+  * by (roxsross)[https://github.com/roxsross]
 
   1. KUBERNETES CHALLENGE BY KODEKLOUD
   * [KODEKLOUD](challenge-03/README.md)
+  * by kodekloud
 
 
 ### Busca los logros donde no hay límites by @roxsross
