@@ -40,14 +40,14 @@ jobs:
       -
         name: Build and push frontend
         working-directory: challenge-01/frontend
-        uses: docker/build-push-action@v3
+      - uses: docker/build-push-action@v3
         with:
           push: true
           tags: user/app:latest
       -
         name: Build and push backend
         working-directory: challenge-01/backend
-        uses: docker/build-push-action@v3
+      - uses: docker/build-push-action@v3
         with:
           push: true
           tags: user/app:latest
