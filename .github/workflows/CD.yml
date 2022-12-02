@@ -16,6 +16,7 @@ jobs:
         run: npm install
 
       - name: "Decrypt env files"
+        working-directory: challenge-01/frontend
         run: npm run env:decrypt
         timeout-minutes: 1
         env:
