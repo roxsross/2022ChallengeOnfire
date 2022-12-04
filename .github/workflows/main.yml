@@ -1,2 +1,16 @@
-- name: Checkout
-  uses: actions/checkout@v2.5.0
+name: Create environment file
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v2.5.0
+
+    - name: 'Create env file'
+      run: |
+        touch .env
+        echo API_KEY=${{ secrets.API_KEY }} >> .env
