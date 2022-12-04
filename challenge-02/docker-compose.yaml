@@ -13,15 +13,30 @@ services:
       - "8080:8080"
     networks:
       - frontend
+    depends_on:
+      - redis
   writer:
     build: services/writer
     ports:
       - "8081:8081"
     networks:
-      - backend
+      - frontend
     command: python main.py
+    depends_on:
+      - redis
   redis:
     image: "redis:alpine"
+    restart: always
+    hostname: redis
+    ports:
+      - '6379:6379'
+    networks:
+        - frontend
+    volumes:
+      - cache:/data
+volumes:
+  cache:
+    driver: local
 
 networks:
   backend:

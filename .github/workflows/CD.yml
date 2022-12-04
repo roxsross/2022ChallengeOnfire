@@ -15,12 +15,11 @@ jobs:
         working-directory: challenge-01/frontend
         run: npm install
 
-      - name: "Decrypt env files"
-        working-directory: challenge-01/frontend
-        run: npm run env:decrypt
-        timeout-minutes: 1
-        env:
-          DOTENV_PASS: ${{ secrets.DOTENV_PASS }}
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo API_KEY=${{ secrets.API_KEY }} >> .env
+          cat .env
 
   docker:
     runs-on: ubuntu-latest

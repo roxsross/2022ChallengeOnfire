@@ -7,3 +7,5 @@ El docker-compose muestra distintas fallas en las aplicaciones, por lo que se de
 * El network frontend no se encuentra definido en el docker-compose, por lo que se debe agregar.
 * El puerto del writer y reader se encuentran intercambiados, por lo que se debe corregir.
 * El dockerfile de python no tiene instalado redis, por lo que se debe agregar. Tambien es necesario cambiar el comando de ejecucion, ya que el comando actual no funciona.
+* El frontend esta utilizando el puerto 5000, en lugar del puerto 3000, por lo que se debe corregir en el Dockerfile y en el docker-compose.
+* 
