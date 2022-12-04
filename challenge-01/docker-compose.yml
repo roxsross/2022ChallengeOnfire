@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    container_name: backend_pokemon
+
+  frontend :
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    container_name: frontend_pokemon
+    depends_on:
+      - backend
+    links:
+      - backend

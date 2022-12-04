@@ -3,7 +3,6 @@ import React from 'react'
 import swal from 'sweetalert';
 
 
-
 const PokeCard = ({pokemon}) => {
 
   function getAbilitie(e) {

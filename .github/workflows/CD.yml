@@ -1,0 +1,22 @@
+name: Continuous deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: "Install dependencies"
+        working-directory: challenge-01/frontend
+        run: npm install
+
+      - name: "Decrypt env files"
+        working-directory: challenge-01/frontend
+        run: |
+          touch .env
+          echo API_KEY=${{ secrets.API_KEY }} >> .env

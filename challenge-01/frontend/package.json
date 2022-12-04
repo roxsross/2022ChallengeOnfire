@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "dependencies": {
     "dotenv": "^16.0.0",
+    "dotenvenc": "^3.0.2",
+    "http-proxy-middleware": "^2.0.6",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.2",
@@ -12,7 +14,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "env:decrypt": "bash env-decrypt.sh",
+    "env:encrypt": "bash env-encrypt.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,5 +32,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "senv": "^1.0.2"
   }
 }

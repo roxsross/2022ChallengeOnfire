@@ -3,24 +3,41 @@ services:
   web:
     build: services/frontend
     ports:
-      - "5000:5000"
+      - "3000:3000"
     networks:
       - frontend
       - backend
   reader:
     build: services/reader
     ports:
-      - "8081:8081"
+      - "8080:8080"
     networks:
       - frontend
+    depends_on:
+      - redis
   writer:
     build: services/writer
     ports:
-      - "8080:8080"
+      - "8081:8081"
     networks:
-      - backend
-  reids:
+      - frontend
+    command: python main.py
+    depends_on:
+      - redis
+  redis:
     image: "redis:alpine"
+    restart: always
+    hostname: redis
+    ports:
+      - '6379:6379'
+    networks:
+        - frontend
+    volumes:
+      - cache:/data
+volumes:
+  cache:
+    driver: local
 
 networks:
   backend:
+  frontend:
