@@ -16,13 +16,6 @@ jobs:
         working-directory: challenge-01/frontend
         run: npm install
 
-      - name: 'Create env file'
-        working-directory: challenge-01/frontend
-        run: |
-          touch .env
-          echo API_KEY=${{ secrets.API_KEY }} >> .env
-          cat .env
-
   docker:
     runs-on: ubuntu-latest
     steps:
