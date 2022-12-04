@@ -19,10 +19,4 @@ Los archivos Dockerfile se encuentran en la raíz de cada proyecto, en el caso d
 El archivo Docker-compose se encuentra en la raíz del proyecto.
 
 ### Variables de entorno
-La variable de entorno utilizada es encriptada utilizando el archivo `env-encrypt.sh` dentro de la carpeta `frontend`<br>
-
-Para desencriptarla se utiliza el archivo `env-decrypt.sh` dentro de la carpeta `frontend`
-
-> **Nota:** Para poder ejecutar los archivos `env-encrypt.sh` y `env-decrypt.sh` se debe tener instalado el paquete `openssl` en el sistema operativo y tener acceso al archivo `.env.pass`.
-
-Finalmente, se ha creado un Github Action para que cada vez que se haga un push a la rama `master` se ejecute el archivo `env-decrypt.sh` y se suba el archivo `.env` al repositorio. Este se utiliza para crear la imagen del frontend y backend en Docker Hub.
+La aplicacion corre un Github Action que se encarga de crear las variables de entorno en el archivo .env 
