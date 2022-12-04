@@ -6,12 +6,12 @@ on:
       - master
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v2.5.0
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.5.0
 
-    - name: 'Create env file'
-      run: |
-        touch .env
-        echo API_KEY=${{ secrets.API_KEY }} >> .env
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo API_KEY=${{ secrets.API_KEY }} >> .env
