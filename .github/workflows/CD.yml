@@ -7,15 +7,11 @@ on:
 
 jobs:
 
-  checkout:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
   create-envfile:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v1.3
         with:
