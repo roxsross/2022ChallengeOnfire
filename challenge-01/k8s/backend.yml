@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend
+spec:
+  containers:
+    - name: backend
+      image: waltergsteven/backend_pokemon
+      ports:
+        - containerPort: 8000
