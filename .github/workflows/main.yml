@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v2.5.0
 
       - name: 'Create env file'
-        working-directory: challenge-01/frontend
+        working-directory: challenge-01/frontend.yml
         run: |
           touch .env
           echo API_KEY=${{ secrets.API_KEY }} >> .env
