@@ -41,7 +41,7 @@ variable "instance_count" {
 variable "naming_prefix" {
   type        = string
   description = "Naming prefix for resources"
-  default     = "mern-stack"
+  default     = "pokemon"
 }
 
 variable "desired_size" {
