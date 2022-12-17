@@ -17,6 +17,6 @@ spec:
       containers:
         - name: fastapi-backend
           image: waltergsteven/backend_pokemon:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000

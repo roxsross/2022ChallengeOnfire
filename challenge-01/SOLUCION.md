@@ -16,7 +16,8 @@ docker run -d -p 3000:3000 frontend_pokemon
 ## 2. Docker-compose
 En el directorio raiz se encuentra el archivo docker-compose.yml el cual contiene las instrucciones para construir las imagenes y desplegar los contenedores del backend y frontend, para construir las imagenes y desplegar los contenedores se debe ejecutar el siguiente comando en la raiz del directorio raiz
 
-```docker-compose up -d
+```
+docker-compose up -d
 ```
 
 ## Variables de entorno
@@ -27,3 +28,44 @@ REACT_APP_URL_PRODUCTION=http://localhost:8000
 ```
 
 Estas variables estan protegidas y son creadas gracias a un Github Action que se encarga de crearlas una vez se hace push a la rama master.
+
+## Terraform
+
+En la ruta terraform se encuentran diferentes archivos que se encargan de crear los recursos necesarios para desplegar la aplicacion en AWS, para desplegar la aplicacion en AWS se debe ejecutar el siguiente comando en la raiz del directorio terraform
+
+```
+terraform init
+terraform plan
+terraform apply
+```
+
+Esto creara un cluster en EKS, una subnet, y un security group, ademas de crear un archivo de configuracion para kubectl, el cual se debe ejecutar para poder conectarse al cluster de EKS
+
+```
+aws eks --region us-east-2 update-kubeconfig --name pokemon
+```
+
+Una vez conectado al cluster de EKS se debe ejecutar el siguiente comando para desplegar los pods y servicios de la aplicacion
+
+```
+kubectl apply -f kubernetes/
+```
+
+## Kubernetes
+
+Probar una aplicacion de prueba para asegurarse que el cluster de EKS esta funcionando correctamente
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-master-controller.json
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-master-service.json
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-controller.json
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-service.json
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-controller.json
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-service.json 
+```
+
+Una vez desplegada la aplicacion en AWS se debe ejecutar el siguiente comando para obtener la direccion ip del load balancer
+
+```
+kubectl get svc
+```
