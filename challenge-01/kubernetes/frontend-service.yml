@@ -8,5 +8,8 @@ spec:
     app: frontend
   ports:
     - protocol: TCP
-      port: 3000
+      port: 80
       targetPort: 3000
+  tls:
+    - secretName: example-tls
+      termination: edge

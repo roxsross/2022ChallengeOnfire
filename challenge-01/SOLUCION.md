@@ -42,7 +42,7 @@ terraform apply
 Esto creara un cluster en EKS, una subnet, y un security group, ademas de crear un archivo de configuracion para kubectl, el cual se debe ejecutar para poder conectarse al cluster de EKS
 
 ```
-aws eks --region us-east-2 update-kubeconfig --name pokemon
+aws eks --region us-east-1 update-kubeconfig --name pokemon
 ```
 
 Una vez conectado al cluster de EKS se debe ejecutar el siguiente comando para desplegar los pods y servicios de la aplicacion
@@ -52,17 +52,6 @@ kubectl apply -f kubernetes/
 ```
 
 ## Kubernetes
-
-Probar una aplicacion de prueba para asegurarse que el cluster de EKS esta funcionando correctamente
-
-```
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-master-controller.json
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-master-service.json
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-controller.json
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-service.json
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-controller.json
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-service.json 
-```
 
 Una vez desplegada la aplicacion en AWS se debe ejecutar el siguiente comando para obtener la direccion ip del load balancer
 
