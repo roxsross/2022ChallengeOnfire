@@ -3,24 +3,33 @@ services:
   web:
     build: services/frontend
     ports:
-      - "5000:5000"
+      - "3000:3000"
     networks:
-      - frontend
-      - backend
+      - default
   reader:
     build: services/reader
     ports:
-      - "8081:8081"
+      - "8080:8080"
     networks:
-      - frontend
+      - default
+    links:
+      - redis
   writer:
     build: services/writer
     ports:
-      - "8080:8080"
+      - "8081:8081"
     networks:
-      - backend
-  reids:
+      - default
+  redis:
     image: "redis:alpine"
+    ports:
+      - "6379:6379"
+    environment:
+      ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - ./redis:/usr/local/etc/redis
+    networks:
+      - default
 
 networks:
-  backend:
+  default:

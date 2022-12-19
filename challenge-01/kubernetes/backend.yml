@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: fastapi-backend
+          image: waltergsteven/backend_pokemon:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
